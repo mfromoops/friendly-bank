@@ -26,7 +26,69 @@ export default component$(() => {
   return (
     <>
       <main>
-        <Slot />
+        <div class="container mx-auto p-5">
+          <h1 class="text-xl">Friendly Bank</h1>
+          <p>Welcome to the Friendly Bank website.</p>
+          {/* Overview */}
+          <div class="py-5">
+            <h2 class="text-lg">Overview</h2>
+            <p>Here is a brief overview of your account:</p>
+            <ul class="flex justify-between gap-5 p-2 shadow">
+              <li>Money Loaned: $1000</li>
+              <li>Money Recovered: $3000</li>
+              <li>
+                Current Balance: <span class="text-red-500">$-2000</span>
+              </li>
+              <li>Loaned to 3 Friends</li>
+              <li>Average Loan: $333</li>
+            </ul>
+          </div>
+          {/* Current Loans */}
+          <div class="py-5">
+            <h2 class="text-lg">Current Loans</h2>
+            <p>Here is a list of your current loans:</p>
+            <ul>
+              <li class="grid grid-cols-4 px-2 py-1 shadow">
+                <span>Loan 1</span>
+                <span>
+                  Loan Total: <span class="text-red-500">$1000</span>
+                </span>
+                <span>
+                  Pending Balance: <span class="text-red-500">$1000</span>
+                </span>
+                <span>
+                  <a href="/add-transaction?loanId=loan1">Add Transaction</a>
+                </span>
+              </li>
+              <li class="grid grid-cols-4 px-2 py-1 shadow">
+                <span>Loan 2</span>
+                <span>
+                  Loan Total: <span class="text-red-500">$100</span>
+                </span>
+                <span>
+                  Pending Balance: <span class="text-red-500">$80</span>
+                </span>
+                <span>
+                  <a href="/add-transaction?loanId=loan2">Add Transaction</a>
+                </span>
+              </li>
+              <li class="grid grid-cols-4 px-2 py-1 shadow">
+                <span>Loan 3</span>
+                <span>
+                  Loan Total: <span class="text-red-500">$1000</span>
+                </span>
+                <span>
+                  Pending Balance: <span class="text-red-500">$1000</span>
+                </span>
+                <span>
+                  <a href="/add-transaction?loanId=loan3">Add Transaction</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <Slot />
+        </div>
       </main>
     </>
   );
